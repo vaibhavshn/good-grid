@@ -1,0 +1,19 @@
+{
+	"name": "good-grid-workspace",
+	"workspaces": [
+		"packages/*",
+		"playground/*"
+	],
+	"scripts": {
+		"format": "prettier --plugin-search-dir=. -w ."
+	},
+	"prettier": {
+		"singleQuote": true,
+		"semi": false,
+		"useTabs": true
+	},
+	"devDependencies": {
+		"prettier": "^2.7.1",
+		"prettier-plugin-tailwindcss": "^0.1.13"
+	}
+}

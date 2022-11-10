@@ -1,0 +1,40 @@
+{
+	"name": "good-grid",
+	"version": "0.1.0",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js",
+			"default": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./react": {
+			"import": "./dist/react/index.mjs",
+			"require": "./dist/react/index.js",
+			"default": "./dist/react/index.js",
+			"types": "./dist/react/index.d.ts"
+		}
+	},
+	"typesVersions": {
+		"*": {
+			"react": [
+				"dist/react/index.d.ts"
+			]
+		}
+	},
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"build": "unbuild"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.24",
+		"react": "^18.2.0",
+		"unbuild": "^0.9.4"
+	}
+}

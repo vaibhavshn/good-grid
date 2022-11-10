@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-zinc-100 antialiased;
+	}
+
+	button {
+		@apply inline-flex place-items-center justify-center gap-2;
+		@apply transition-colors;
+	}
+}
+
+@layer components {
+	.text-gradient {
+		@apply bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent;
+	}
+}
