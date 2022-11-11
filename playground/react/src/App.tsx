@@ -69,18 +69,18 @@ export default function App() {
 	}, [])
 
 	return (
-		<div className="flex h-screen w-full flex-col">
-			<header className="flex flex-col items-center justify-center gap-4 bg-white py-6 px-4 pb-2">
+		<div className="flex h-full w-full flex-col">
+			<header className="flex flex-col items-center justify-center gap-4 bg-white py-3 px-4 pb-1 md:py-6 md:pb-2">
 				<h1 className="text-gradient text-center text-3xl font-black tracking-tight">
 					good-grid
 				</h1>
-				<p className="max-w-lg text-sm text-zinc-600">
+				<p className="max-w-lg text-center text-sm text-zinc-600">
 					Easily implement a responsive grid of videos/photos/anything.
 				</p>
 			</header>
 
-			<div className="flex select-none flex-col items-center justify-center divide-y divide-zinc-200 border-b bg-white px-4 pb-2 lg:flex-row lg:divide-x lg:divide-y-0">
-				<div className="flex flex-col items-center gap-1 p-4">
+			<div className="flex select-none flex-col items-center justify-center divide-y divide-zinc-200 border-b bg-white px-4 pb-2 md:flex-row md:divide-x md:divide-y-0">
+				<div className="flex flex-col items-center gap-1 p-4 py-2 lg:py-4">
 					<h2 className="text-xs text-zinc-500">Participants</h2>
 
 					<div className="flex items-center gap-2 font-semibold text-purple-600">
@@ -124,7 +124,7 @@ export default function App() {
 					</div>
 				</div>
 
-				<div className="flex flex-col items-center gap-1 p-4">
+				<div className="flex flex-col items-center gap-1 p-4 py-2 lg:py-4">
 					<h2 className="text-xs text-zinc-500">Aspect Ratio</h2>
 
 					<div
@@ -151,7 +151,7 @@ export default function App() {
 					</div>
 				</div>
 
-				<div className="flex flex-col items-center gap-1 p-4">
+				<div className="flex flex-col items-center gap-1 p-4 py-2 lg:py-4">
 					<h2 className="text-xs text-zinc-500">Gap</h2>
 
 					<div className="flex items-center gap-2 text-teal-600">
@@ -202,10 +202,15 @@ export default function App() {
 							)}
 							key={participant.name}
 						>
-							<div className="text-xl text-white lg:text-3xl">
+							<div
+								className={clsx(
+									'text-white lg:text-3xl',
+									participants.length > 14 ? 'text-sm' : 'md:text-xl'
+								)}
+							>
 								{participant.name}
 							</div>
-							<span className="absolute bottom-2 right-2 text-sm text-white/40 lg:bottom-3 lg:right-3 lg:text-xl">
+							<span className="absolute bottom-1.5 right-1.5 text-sm text-white/40 lg:bottom-3 lg:right-3 lg:text-xl">
 								{aspectRatio}
 							</span>
 						</div>

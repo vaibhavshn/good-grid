@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+	html,
+	body {
+		-webkit-overflow-scrolling: touch !important;
+		@apply h-full;
+	}
+
 	body {
 		@apply bg-zinc-100 antialiased;
 	}
@@ -10,6 +16,10 @@
 	button {
 		@apply inline-flex place-items-center justify-center gap-2;
 		@apply transition-colors;
+	}
+
+	#root {
+		@apply h-full w-full;
 	}
 }
 
