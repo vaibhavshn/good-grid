@@ -4,6 +4,8 @@ import clsx from 'clsx'
 import { createGrid } from 'good-grid'
 import { useGridDimensions } from 'good-grid/react'
 
+import { Analytics } from '@vercel/analytics/react'
+
 function getRandomColor() {
 	const hue = Math.floor(Math.random() * 360)
 	return `hsl(${hue} 60% 60%)`
@@ -70,6 +72,7 @@ export default function App() {
 
 	return (
 		<div className="flex h-full w-full flex-col">
+			<Analytics />
 			<header className="flex flex-col items-center justify-center gap-4 bg-white py-3 px-4 pb-1 md:py-6 md:pb-2">
 				<h1 className="text-gradient text-center text-3xl font-black tracking-tight">
 					good-grid

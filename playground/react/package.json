@@ -9,6 +9,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@vercel/analytics": "^0.1.4",
 		"clsx": "^1.2.1",
 		"good-grid": "workspace:*",
 		"react": "^18.2.0",
