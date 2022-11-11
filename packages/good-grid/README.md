@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/vaibhavshn/good-grid/HEAD/.github/logo.svg" />
+  <img src="https://raw.githubusercontent.com/vaibhavshn/good-grid/HEAD/.github/logo.svg" aria-label="Good Grid Logo" />
 </p>
 
 <p align="center">
