@@ -18,6 +18,9 @@ function getAspectRatio(ratio: string) {
 	return Number.parseInt(height) / Number.parseInt(width)
 }
 
+/**
+ * Calculates grid item dimensions for items that can fit in a container.
+ */
 export function getGridItemDimensions({
 	count,
 	dimensions,
@@ -74,6 +77,9 @@ export function getGridItemDimensions({
 	return { width: w, height: h, rows: b, cols: a }
 }
 
+/**
+ * Creates a utility function which helps you position grid items in a container.
+ */
 export function createGridItemPositioner({
 	parentDimensions,
 	dimensions,
@@ -135,6 +141,9 @@ interface Options {
 	gap: number
 }
 
+/**
+ * Calculates data required for making a responsive grid.
+ */
 export function createGrid({ aspectRatio, count, dimensions, gap }: Options) {
 	const { width, height, rows, cols } = getGridItemDimensions({
 		aspectRatio,
