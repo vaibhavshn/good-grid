@@ -1,6 +1,6 @@
 {
 	"name": "good-grid",
-	"version": "0.1.0-1",
+	"version": "0.1.0-2",
 	"description": "A zero-dependency and lightweight library to make responsive grids of videos/photos/anything",
 	"license": "MIT",
 	"repository": "vaibhavshn/good-grid",
