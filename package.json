@@ -10,7 +10,15 @@
 	"prettier": {
 		"singleQuote": true,
 		"semi": false,
-		"useTabs": true
+		"useTabs": true,
+		"overrides": [
+			{
+				"files": "*.md",
+				"options": {
+					"useTabs": false
+				}
+			}
+		]
 	},
 	"devDependencies": {
 		"prettier": "^2.7.1",
