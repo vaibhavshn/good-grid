@@ -54,7 +54,7 @@ export function getGridItemDimensions({
 	const widths = []
 
 	for (let n = 1; n <= N; n++) {
-		widths.push((W - s * n) / n, (H - s * n) / (n * r))
+		widths.push((W - s * (n - 1)) / n, (H - s * (n - 1)) / (n * r))
 	}
 
 	// sort in descending order, largest first
