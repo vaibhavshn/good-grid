@@ -1,4 +1,4 @@
-type Dimensions = {
+export interface Dimensions {
 	width: number
 	height: number
 }
@@ -8,7 +8,7 @@ type Dimensions = {
  * @param ratio The aspect ratio in the format of `16:9` where `width:height`
  * @returns The parsed value of aspect ratio
  */
-function getAspectRatio(ratio: string) {
+export function getAspectRatio(ratio: string) {
 	const [width, height] = ratio.split(':')
 	if (!width || !height) {
 		throw new Error(
@@ -134,7 +134,7 @@ export function createGridItemPositioner({
 	return getPosition
 }
 
-interface Options {
+export interface Options {
 	aspectRatio: string
 	count: number
 	dimensions: Dimensions
