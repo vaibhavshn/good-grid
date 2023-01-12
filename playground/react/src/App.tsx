@@ -22,7 +22,7 @@ const DEFAULT_PARTICIPANTS = [{ name: 'You', color: getRandomGradient() }]
 const DEFAULT_ASPECT_RATIO = '16:9'
 const DEFAULT_GAP = GAP_UNIT * 2
 
-for (let i = 0; i < 12 - 1; i++) {
+for (let i = 0; i < 5 - 1; i++) {
 	DEFAULT_PARTICIPANTS.push({
 		name: 'User ' + (i + 1),
 		color: getRandomGradient(),
