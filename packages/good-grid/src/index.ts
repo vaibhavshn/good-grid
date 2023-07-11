@@ -1,4 +1,4 @@
-export interface Dimensions {
+export interface GridDimensions {
 	width: number
 	height: number
 }
@@ -26,7 +26,7 @@ export function getGridItemDimensions({
 	dimensions,
 	aspectRatio,
 	gap,
-}: Options) {
+}: CreateGridOptions) {
 	/**
 	 * The code in this function is adapted from the following answer
 	 * to a question, although a bit modified
@@ -77,6 +77,15 @@ export function getGridItemDimensions({
 	return { width: w, height: h, rows: b, cols: a }
 }
 
+interface CreateGridItemPositionOptions {
+	parentDimensions: GridDimensions
+	dimensions: GridDimensions
+	rows: number
+	cols: number
+	count: number
+	gap: number
+}
+
 /**
  * Creates a utility function which helps you position grid items in a container.
  */
@@ -87,14 +96,7 @@ export function createGridItemPositioner({
 	cols,
 	count,
 	gap,
-}: {
-	parentDimensions: Dimensions
-	dimensions: Dimensions
-	rows: number
-	cols: number
-	count: number
-	gap: number
-}) {
+}: CreateGridItemPositionOptions) {
 	const { width: W, height: H } = parentDimensions
 	const { width: w, height: h } = dimensions
 
@@ -134,17 +136,22 @@ export function createGridItemPositioner({
 	return getPosition
 }
 
-export interface Options {
+export interface CreateGridOptions {
 	aspectRatio: string
 	count: number
-	dimensions: Dimensions
+	dimensions: GridDimensions
 	gap: number
 }
 
 /**
  * Calculates data required for making a responsive grid.
  */
-export function createGrid({ aspectRatio, count, dimensions, gap }: Options) {
+export function createGrid({
+	aspectRatio,
+	count,
+	dimensions,
+	gap,
+}: CreateGridOptions) {
 	const { width, height, rows, cols } = getGridItemDimensions({
 		aspectRatio,
 		count,

@@ -1,9 +1,6 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import clsx from 'clsx'
-
-import { createGrid } from 'good-grid'
-import { useGridDimensions } from 'good-grid/react'
-
+import { useGoodGrid, useGridDimensions } from 'good-grid/react'
 import { Analytics } from '@vercel/analytics/react'
 
 function getRandomColor() {
@@ -37,16 +34,12 @@ export default function App() {
 	const [aspectRatio, setAspectRatio] = useState(DEFAULT_ASPECT_RATIO)
 	const [gap, setGap] = useState(DEFAULT_GAP)
 
-	const { width, height, getPosition } = useMemo(
-		() =>
-			createGrid({
-				dimensions,
-				count: participants.length,
-				aspectRatio,
-				gap,
-			}),
-		[dimensions, participants, aspectRatio, gap]
-	)
+	const { width, height, getPosition } = useGoodGrid({
+		dimensions,
+		count: participants.length,
+		aspectRatio,
+		gap,
+	})
 
 	const onAdd = useCallback(() => {
 		setParticipants((p) => [
@@ -72,7 +65,8 @@ export default function App() {
 
 	return (
 		<div className="flex h-full w-full flex-col">
-			<Analytics />
+			{import.meta.env.PROD && <Analytics />}
+
 			<header className="flex flex-col items-center justify-center gap-4 bg-white py-3 px-4 pb-1 md:py-6 md:pb-2">
 				<h1 className="text-gradient text-center text-3xl font-black tracking-tight">
 					good-grid
