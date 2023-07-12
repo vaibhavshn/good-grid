@@ -3,7 +3,7 @@ import {
 	CreateGridOptions,
 	createGridItemPositioner,
 	getGridItemDimensions,
-} from '..'
+} from 'good-grid'
 
 /**
  * A React hook to calculate dimensions of an element.
