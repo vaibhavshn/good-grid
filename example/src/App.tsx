@@ -67,10 +67,8 @@ export default function App() {
 		<div className="flex h-full w-full flex-col">
 			{import.meta.env.PROD && <Analytics />}
 
-			<header className="flex flex-col items-center justify-center gap-4 bg-white py-3 px-4 pb-1 md:py-6 md:pb-2">
-				<h1 className="text-gradient text-center text-3xl font-black tracking-tight">
-					good-grid
-				</h1>
+			<header className="flex flex-col items-center justify-center gap-4 bg-white px-4 py-3 pb-1 md:py-6 md:pb-2">
+				<h1 className="text-gradient text-center text-3xl font-black tracking-tight">good-grid</h1>
 				<p className="max-w-lg text-center text-sm text-zinc-600">
 					Easily implement a responsive grid of videos/photos/anything.
 				</p>
@@ -124,18 +122,13 @@ export default function App() {
 				<div className="flex flex-col items-center gap-1 p-4 py-2 lg:py-4">
 					<h2 className="text-xs text-zinc-500">Aspect Ratio</h2>
 
-					<div
-						className="flex items-center gap-1.5 text-pink-600"
-						role="tablist"
-					>
+					<div className="flex items-center gap-1.5 text-pink-600" role="tablist">
 						{ASPECT_RATIOS.map((ratio) => (
 							<button
 								onClick={() => setAspectRatio(ratio)}
 								className={clsx(
 									'h-8 rounded-md border border-pink-600 px-2',
-									aspectRatio === ratio
-										? 'bg-pink-600 text-white'
-										: 'hover:bg-pink-100'
+									aspectRatio === ratio ? 'bg-pink-600 text-white' : 'hover:bg-pink-100'
 								)}
 								key={ratio}
 								aria-label={`Set aspect ratio to ${ratio}`}
@@ -175,10 +168,7 @@ export default function App() {
 			</div>
 
 			{/* The actual grid */}
-			<div
-				className="group relative z-10 flex-grow overflow-hidden bg-zinc-100"
-				ref={$grid}
-			>
+			<div className="group relative z-10 flex-grow overflow-hidden bg-zinc-100" ref={$grid}>
 				{participants.map((participant, index) => {
 					const { top, left } = getPosition(index)
 

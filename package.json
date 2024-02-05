@@ -1,8 +1,7 @@
 {
-	"name": "good-grid-workspace",
 	"workspaces": [
-		"packages/*",
-		"playground/*"
+		"package",
+		"example"
 	],
 	"scripts": {
 		"format": "prettier --plugin-search-dir=. -w ."
@@ -10,6 +9,7 @@
 	"prettier": {
 		"singleQuote": true,
 		"semi": false,
+		"printWidth": 100,
 		"useTabs": true,
 		"overrides": [
 			{

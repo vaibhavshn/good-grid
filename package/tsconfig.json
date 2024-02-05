@@ -15,7 +15,7 @@
 		"skipLibCheck": true,
 		"paths": {
 			"good-grid": ["./src"],
-			"good-grid/*": ["./src/*"],
+			"good-grid/*": ["./src/*"]
 		}
 	},
 	"include": ["src"]

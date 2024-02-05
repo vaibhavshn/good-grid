@@ -11,9 +11,7 @@ export interface GridDimensions {
 export function getAspectRatio(ratio: string) {
 	const [width, height] = ratio.split(':')
 	if (!width || !height) {
-		throw new Error(
-			'good-grid: Invalid aspect ratio provided, expected format is "width:height".'
-		)
+		throw new Error('good-grid: Invalid aspect ratio provided, expected format is "width:height".')
 	}
 	return Number.parseInt(height) / Number.parseInt(width)
 }
@@ -21,12 +19,7 @@ export function getAspectRatio(ratio: string) {
 /**
  * Calculates grid item dimensions for items that can fit in a container.
  */
-export function getGridItemDimensions({
-	count,
-	dimensions,
-	aspectRatio,
-	gap,
-}: CreateGridOptions) {
+export function getGridItemDimensions({ count, dimensions, aspectRatio, gap }: CreateGridOptions) {
 	/**
 	 * The code in this function is adapted from the following answer
 	 * to a question, although a bit modified
@@ -146,12 +139,7 @@ export interface CreateGridOptions {
 /**
  * Calculates data required for making a responsive grid.
  */
-export function createGrid({
-	aspectRatio,
-	count,
-	dimensions,
-	gap,
-}: CreateGridOptions) {
+export function createGrid({ aspectRatio, count, dimensions, gap }: CreateGridOptions) {
 	const { width, height, rows, cols } = getGridItemDimensions({
 		aspectRatio,
 		count,

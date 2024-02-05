@@ -1,9 +1,5 @@
 import { RefObject, useEffect, useMemo, useState } from 'react'
-import {
-	CreateGridOptions,
-	createGridItemPositioner,
-	getGridItemDimensions,
-} from 'good-grid'
+import { CreateGridOptions, createGridItemPositioner, getGridItemDimensions } from '..'
 
 /**
  * A React hook to calculate dimensions of an element.
@@ -38,12 +34,7 @@ export function useGridDimensions($el: RefObject<HTMLElement>) {
 /**
  * React hook for using good-grid effortlessly.
  */
-export function useGoodGrid({
-	dimensions,
-	aspectRatio,
-	gap,
-	count,
-}: CreateGridOptions) {
+export function useGoodGrid({ dimensions, aspectRatio, gap, count }: CreateGridOptions) {
 	const { width, height, rows, cols } = useMemo(() => {
 		return getGridItemDimensions({ dimensions, count, aspectRatio, gap })
 	}, [dimensions, aspectRatio, gap, count])
