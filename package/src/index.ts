@@ -61,8 +61,8 @@ export function getGridItemDimensions({ count, dimensions, aspectRatio, gap }: C
 		b = Math.floor((H + s) / (h + s))
 
 		if (a * b >= N) {
-			// recalculate rows, as row calculated above can be inaccurate
-			b = Math.ceil(N / a)
+			// recalculate cols, as col calculated above can be inaccurate
+			a = Math.ceil(N / b)
 			break
 		}
 	}
