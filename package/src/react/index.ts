@@ -26,7 +26,7 @@ export function useGridDimensions($el: RefObject<HTMLElement>) {
 		return () => {
 			observer.disconnect()
 		}
-	}, [])
+	}, [$el])
 
 	return dimensions
 }
