@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A zero-dependency and lightweight library to make responsive grids of videos/photos/anything.
+  A zero-dependency, lightweight and performant library to make responsive grids of videos/photos/anything.
 </p>
 
 <p align="center">
@@ -20,11 +20,36 @@ npm install good-grid
 
 ## Usage
 
-Here's a minimal example of the API usage in React:
+Here is how you can use the core APIs to size and position the grid elements:
+
+```js
+// get dimensions of the parent element and pass it to `createGrid`
+const { width, height, getPosition } = createGrid({
+  dimensions,
+  count: participants.length,
+  aspectRatio: '16:9',
+  gap: 10,
+})
+
+const elements = document.querySelectorAll('.participant-tile')
+
+elements.forEach((element, index) => {
+  // get position of element at the specified index
+  const { top, left } = getPosition(index)
+
+  element.style.width = width
+  element.style.height = height
+  element.style.top = top
+  element.style.left = left
+})
+```
+
+### React
+
+A minimal example of the API usage in React.
 
 ```jsx
-import { createGrid } from 'good-grid'
-import { useGridDimensions } from 'good-grid/react'
+import { useGridDimensions, useGoodGrid } from 'good-grid/react'
 
 function App() {
   const $el = useRef()
@@ -33,7 +58,7 @@ function App() {
   // and returns it's dimensions
   const dimensions = useGridDimensions($el)
 
-  const { width, height, getPosition } = createGrid({
+  const { width, height, getPosition } = useGoodGrid({
     dimensions,
     count: participants.length,
     aspectRatio: '16:9',
